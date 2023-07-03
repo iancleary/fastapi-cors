@@ -1,2 +1,4 @@
 # fastapi-cors
-Abstraction to provide CORS settings via environement variables
+
+A simply scoped abstraction to provide CORS settings via environment variables to a Fastapi application.
+

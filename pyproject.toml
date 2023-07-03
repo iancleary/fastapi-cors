@@ -1,0 +1,105 @@
+[project]
+name = "fastapi_cors"
+description = "Simple env support of CORS settings for Fastapi applications"
+authors = [
+    {name = "Ian Cleary", email = "github@iancleary.me"},
+]
+dynamic = ["version"]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "environs>=9.5.0",
+    "fastapi>=0.99.1",
+]
+readme = "README.md"
+keywords = ["cors", "python", "fastapi", "environs"]
+classifiers = [
+    "Topic :: Software Development :: Code Generators",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/iancleary/fastapi-cors"
+Repository = "https://github.com/iancleary/fastapi-cors"
+Documentation = "https://github.com/iancleary/fastapi-cors"
+
+[tool.pdm.version]
+source = "scm"
+write_to = "fastapi_cors/VERSION"
+write_template = "__version__ = '{}'"  # optional, default to "{}"
+
+[tool.pdm.build]
+includes = ["fastapi_cors"]
+source-includes = ["LICENSE", "README.md"]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black==22.10.0",
+    "mypy==0.990",
+    "ruff==0.0.225",
+    "pytest-pretty==1.2.0",
+    "isort==5.12.0",
+]
+
+[tool.isort]
+src_paths = ["fastapi_cors", "tests"]
+force_single_line = true
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+line_length = 88
+
+[tool.autoflake]
+remove-all-unused-imports = true
+recursive = true
+remove-unused-variables = true
+in-place = true
+expand-star-imports = true
+exclude = "__init__.py"
+remove-duplicate-keys = true
+
+[tool.ruff]
+line-length = 88
+
+# Enable Pyflakes `E` and `F` codes by default.
+select = ["TID2", "E", "F"]
+ignore = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "docs"
+]
+
+[tool.ruff.isort]
+known-first-party = ["fastapi_cors"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = ['docs/']
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"

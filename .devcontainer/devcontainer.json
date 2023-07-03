@@ -1,0 +1,12 @@
+{
+    "image": "ghcr.io/iancleary/devcontainer:v0.0.17",
+    "remoteUser": "vscode",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+			"streetsidesoftware.code-spell-checker",
+			"ms-python.python"
+		]
+      }
+    }
+  }
