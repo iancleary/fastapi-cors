@@ -5,7 +5,8 @@
       "vscode": {
         "extensions": [
 			"streetsidesoftware.code-spell-checker",
-			"ms-python.python"
+			"ms-python.python",
+			"github.vscode-github-actions"
 		]
       }
     }
