@@ -26,6 +26,7 @@ A health check route is optionally added that displays these (but not other) env
 
 from fastapi import FastAPI
 
+# during this next line `fastapi_cors.env` will read environment variables from .env
 from fastapi_cors import CORS 
 
 app = FastAPI()
