@@ -1,11 +1,10 @@
-
 from fastapi_cors.env import ALLOW_ORIGINS
 from fastapi_cors.env import ALLOWED_CREDENTIALS
 from fastapi_cors.env import ALLOWED_HEADERS
 from fastapi_cors.env import ALLOWED_METHODS
 from fastapi_cors.env import HOST
-from fastapi_cors.env import PORT
 from fastapi_cors.env import LOG_LEVEL
+from fastapi_cors.env import PORT
 
 
 def test_allow_credentials() -> None:
