@@ -17,18 +17,18 @@ CORS(app)
 
 ## Opinions
 
-This is an opinionated way to start FastAPI:
+A health check route is optionally added that displays these (but not other) environment variables.
 
-- No ReDoc.
-- Swagger is hosted at the `root_path`.
-- Swagger UI oAuth2 redirect URL is `/oauth2-redirect`.
-- Endpoint `/ping` responds with the plain text response "pong".
-- Mounts static directory at `/static` (default).
-- Title and site name in Swagger
-- Assets (expects these files in the directory `./static/assets`):
-  - Favicon - `favicon.ico`.
-  - Swagger CSS - `swagger-ui.min.css`.
-  - Swagger Bundle JS - `swagger-ui-bundle.min.js`.
+
+*If you want to disable it, use the code below*
+
+```python
+from fastapi_cors import CORS 
+
+app = FastAPI()
+
+CORS(app, include_health_check=False)
+```
 
 ## Config
 
