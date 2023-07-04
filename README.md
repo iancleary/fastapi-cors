@@ -7,7 +7,7 @@ A simply scoped abstraction to provide CORS settings via environment variables t
 ```python
 from fastapi import FastAPI
 
-# import (fastapi_cors.env) will read environment variables from .env
+# during this next line `fastapi_cors.env` will read environment variables from .env
 from fastapi_cors import CORS 
 
 app = FastAPI()
@@ -23,6 +23,9 @@ A health check route is optionally added that displays these (but not other) env
 *If you want to disable it, use the code below*
 
 ```python
+
+from fastapi import FastAPI
+
 from fastapi_cors import CORS 
 
 app = FastAPI()
