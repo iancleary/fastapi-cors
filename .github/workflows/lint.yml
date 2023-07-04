@@ -38,7 +38,7 @@ jobs:
         run: |
           pdm export -o requirements.txt --without-hashes
           python3 -m pip install -r requirements.txt --disable-pip-version-check
-      - name: Run scripts/lint (without pdm)
+      - name: Lint (without pdm)
         run: |
           mypy ./
           black ./ --check
