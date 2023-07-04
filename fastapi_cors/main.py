@@ -8,7 +8,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 
-class FastAPI_Cors():
+class CORS():
     def __init__(self, app: FastAPI, include_health_check: bool = True):
         from fastapi_cors.env import ALLOW_ORIGINS
         from fastapi_cors.env import ALLOWED_CREDENTIALS
@@ -52,5 +52,3 @@ class FastAPI_Cors():
                 )
                 json_compatible_health_check = jsonable_encoder(health_check)
                 return JSONResponse(content=json_compatible_health_check)
-        
-        return app
