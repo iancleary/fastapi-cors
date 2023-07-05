@@ -3,8 +3,9 @@ services:
   fastapi-cors:
     image: "ghcr.io/iancleary/devcontainer:v0.0.18"
     volumes:
-      # Mounts the project folder to '/workspace'. While this file is in .devcontainer,
-      # mounts are relative to the first file in the list, which is a level up.
+      # paths are relative to the first docker-compose in the list in devcontainer.json
+      # since this is the only file in that list, 
+      # this mounts the project folder (up one level) to '/workspace'.
       - ..:/workspace:cached
 
     # [Optional] Required for ptrace-based debuggers like C++, Go, and Rust
