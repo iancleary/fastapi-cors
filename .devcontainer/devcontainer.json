@@ -1,6 +1,9 @@
 {
-  "image": "ghcr.io/iancleary/devcontainer:v0.0.18",
+  "name": "fastapi-cors",
   "remoteUser": "vscode",
+  "dockerComposeFile": ["docker-compose.devcontainer.yml"],
+  "service": "fastapi-cors",
+  "workspaceFolder": "/workspace/fastapi-cors/",
   "customizations": {
     "vscode": {
       "extensions": [
