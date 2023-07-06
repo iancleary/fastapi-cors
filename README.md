@@ -48,9 +48,17 @@ Configure FastAPI as usual. Extra arguments (that can be accessed from `app.extr
 | `ALLOWED_METHODS` | ["*"] | A list of HTTP methods that should be allowed for cross-origin requests. Defaults to ['*'] to allow all standard methods. You can use ['GET'] to reduce the list. |
 | `ALLOWED_HEADERS` | ["Access-Control-Allow-Origin"] | A list of HTTP request headers that should be supported for cross-origin requests. You can use ['*'] to allow all headers. The Accept, Accept-Language, Content-Language and Content-Type headers are always allowed for [simple CORS requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests) |
 
+> ⚠️ `allow_origins` default is `["http://localhost","http://localhost:3000"]`, not `[]` (80 -> docs, 3000 -> frontend)
+>
+> ⚠️ `allow_methods` default is `["*"]`, not `["GET"]`
+>
+> ⚠️ `allowed_credentials` default is `True`, not `False`
+>
 > See the [FastAPI documentation on CORS](https://fastapi.tiangolo.com/tutorial/cors/?h=cors) for more information
 
 ### Example Env
+
+Values will be cast into a `list` of `str`, as appropriate.
 
 ```env
 HOST=0.0.0.0
@@ -58,8 +66,8 @@ PORT=8000
 LOG_LEVEL=info
 ALLOW_ORIGINS=http://localhost,http://localhost:3000
 ALLOWED_CREDENTIALS=True
-ALLOWED_METHODS=["*"]
-ALLOWED_HEADERS
+ALLOWED_METHODS=*
+ALLOWED_HEADERS=Access-Control-Allow-Origin
 
 ```
 
