@@ -3,7 +3,7 @@
   "remoteUser": "vscode",
   "dockerComposeFile": ["docker-compose.devcontainer.yml"],
   "service": "fastapi-cors",
-  "workspaceFolder": "/workspace/fastapi-cors/",
+  "workspaceFolder": "/workspace/",
   "customizations": {
     "vscode": {
       "extensions": [
