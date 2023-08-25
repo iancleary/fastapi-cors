@@ -7,7 +7,7 @@
   "shell": {
     "init_hook": "source $VENV_DIR/bin/activate",
     "scripts": {
-      "pdm": "pip install pdm && pdm install"
+      "pdm": "export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt && pip install pdm && pdm install"
     }
   },
   "nixpkgs": {
