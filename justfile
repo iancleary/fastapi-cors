@@ -9,7 +9,7 @@ PROD_DOCKER_COMPOSE := "docker-compose.prod.yml"
 
 # install the project using pdm
 install:
-	pdm install
+	export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt && pip install pdm && pdm install
 
 # lint the code
 lint:
